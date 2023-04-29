@@ -2,8 +2,6 @@ import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
 
-openai_api_key = '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'
-
 template = """
     Below is an email that may be poorly worded.
     Your goal is to:
