@@ -2,6 +2,8 @@ import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
 
+openai_api_key = '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'
+
 template = """
     Below is an email that may be poorly worded.
     Your goal is to:
@@ -36,8 +38,6 @@ prompt = PromptTemplate(
     template=template,
 )
 
-# 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
-
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
     # Make sure your openai_api_key is set as an environment variable
@@ -49,8 +49,6 @@ st.header("Email Generator")
 st.write("This app helps non-native English speakers communicate professionally via email. Submit your text, and our algorithms will analyze and format it for visual appeal with clear headings and paragraphs. Perfect for professionals, students, or anyone looking to improve their English writing skills.")
 
 st.markdown("## Enter Your Email To Convert")
-
-openai_api_key = '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'
 
 col1, col2 = st.columns(2)
 with col1:
@@ -77,6 +75,12 @@ def get_text():
 
 email_input = get_text()
 
+# Create a button that displays an example email when clicked
+def update_text_with_example():
+    st.session_state.email_input = "Sally, I am starting work at your company on Monday. From, Dave."
+
+st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
+
 # Create a submit button that the user can click to submit the form
 submit_button = st.button("Submit")
 
@@ -94,21 +98,7 @@ def process_email_input(email_input):
 
     st.write(formatted_email)
 
-# When the submit button is clicked and the email input is not empty, process the email input
-if submit_button and email_input:
-    if not openai_api_key:
-        st.warning('Please insert OpenAI API Key. Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', icon="⚠️")
-        st.stop()
-
-    process_email_input(email_input)
-
-# Create a button that displays an example email when clicked
-def update_text_with_example():
-    st.session_state.email_input = "Sally, I am starting work at your company on Monday. From, Dave."
-
-st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
-
 # Display the converted email if it has been processed
-if "email_input" in st.session_state:
+if "email_input" in st.session_state and submit_button and email_input:
     st.markdown("### Your Converted Email:")
     process_email_input(st.session_state.email_input)
