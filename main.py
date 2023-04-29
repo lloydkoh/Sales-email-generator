@@ -39,7 +39,7 @@ prompt = PromptTemplate(
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
     # Make sure your openai_api_key is set as an environment variable
-    llm = OpenAI(temperature=.7, openai_api_key=x)
+    llm = OpenAI(temperature=.7, openai_api_key=openai_api_key)
     return llm
 
 st.set_page_config(page_title="Globalize Email", page_icon=":robot:")
@@ -88,7 +88,7 @@ def process_email_input(email_input):
         st.write("Please enter a shorter email. The maximum length is 700 words.")
         st.stop()
 
-    llm = load_LLM(openai_api_key=x)
+    llm = load_LLM(openai_api_key=openai_api_key)
 
     prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
 
