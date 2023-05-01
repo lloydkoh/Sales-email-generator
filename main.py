@@ -2,6 +2,8 @@ import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
 
+os.environ["openai_api_key"] = openai_api_key
+
 template = """
     Below is an email that may be poorly worded.
     Your goal is to:
