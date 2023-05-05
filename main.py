@@ -46,7 +46,7 @@ def load_LLM(openai_api_key):
 
 st.set_page_config(page_title="Globalize Email", page_icon=":robot:")
 st.header("Email Generator")
-st.subheader("By Lloyd Koh")
+st.markdown("_By Lloyd Koh_")
 st.write("This app helps non-native English speakers communicate professionally via email. Submit your text, and our algorithms will analyze and format it for visual appeal with clear headings and paragraphs. Perfect for professionals, students, or anyone looking to improve their English writing skills.")
 
 st.markdown("## Enter Your Email To Convert")
