@@ -78,7 +78,7 @@ email_input = get_text()
 
 # Create a button that displays an example email when clicked
 def update_text_with_example():
-    st.session_state.email_input = "Sally, I am starting work at your company on Monday. From, Dave."
+    st.session_state.email_input = "Kelly, I am starting work at your company on Tuesday. From, Sam."
 
 st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
 
