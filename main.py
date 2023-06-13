@@ -12,16 +12,16 @@ template = """
     - Convert the input text to a specified dialect
 
     Here are some examples different Tones:
-    - Formal: We went to Barcelona for the weekend. We have a lot of things to tell you.
-    - Informal: Went to Barcelona for the weekend. Lots to tell you.  
+    - Formal: I would appreciate further clarification on a few points in your recent proposal. Let's schedule a meeting to discuss these matters.
+    - Informal: Your proposal is awesome! Got a couple of questions. Let's grab coffee or chat sometime to go over them.
 
     Here are some examples of words in different dialects:
-    - American: French Fries, cotton candy, apartment, garbage, cookie, green thumb, parking lot, pants, windshield
-    - British: chips, candyfloss, flag, rubbish, biscuit, green fingers, car park, trousers, windscreen
+    - American: Apartment, Vacation, Sidewalk, Soccer, Elevator, Cookie, Vacation, Truck, Gasoline, Pants, Cellphone, Diaper, Faucet, Fall (autumn), Mailbox
+    - British: Flat, Holiday, Pavement, Football, Lift, Biscuit, Holiday, Lorry, Petrol, Trousers, Mobile, Nappy, Tap, Autumn, Postbox
 
     Example Sentences from each dialect:
-    - American: I headed straight for the produce section to grab some fresh vegetables, like bell peppers and zucchini. After that, I made my way to the meat department to pick up some chicken breasts.
-    - British: Well, I popped down to the local shop just the other day to pick up a few bits and bobs. As I was perusing the aisles, I noticed that they were fresh out of biscuits, which was a bit of a disappointment, as I do love a good cuppa with a biscuit or two.
+    - American: I realized that maneuvering through the center of the parking lot was a challenge, especially when I realized that the color of my neighbor's car was spelled "gray" and not "grey" like I had grown accustomed to.
+    - British: I realised that manoeuvring through the centre of the car park was a challenge, especially when I realised that the colour of my neighbour's car was spelled "grey" and not "gray" like I had grown accustomed to.
 
     Please start the email with a warm introduction. Add the introduction if you need to.
     
@@ -30,7 +30,7 @@ template = """
     DIALECT: {dialect}
     EMAIL: {email}
     
-    YOUR {dialect} RESPONSE:
+    YOUR RESPONSE:
 """
 
 prompt = PromptTemplate(
